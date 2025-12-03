@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600;700;800&display=swap&Roboto");
+
+@import "tailwindcss";
+
+html,
+body {
+  width: 100dvw;
+  overflow: hidden;
+  height: 100dvh;
+  background-image: url("/images/wallpaper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@theme {
+  --font-georama: "Georama", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --breakpoint-3xl: 1920px;
+}
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+@utility col-center {
+  @apply flex flex-col items-center justify-center;
+}
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@layer base {
+  main {
+    @apply w-dvw h-dvh overflow-hidden;
+  }
+  nav {
+    @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl
+    p-2 ps-5 select-none rounded-b-[5px];
+
+    div {
+      @apply flex items-center max-sm:w-full
+       max-sm:justify-center gap-5;
+
+      &:last-child {
+        @apply max-sm:hidden;
+      }
+    }
+
+    ul {
+      @apply flex items-center gap-5 max-sm:hidden;
+
+      p {
+        @apply text-sm transition-all hover:underline
+         cursor-pointer hover:opacity-80;
+      }
+    }
+  }
+}
