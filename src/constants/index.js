@@ -10,4 +10,13 @@ const navIcons = [
   { id: 3, icon: "/icons/user.svg", alt: "user Icon" },
   { id: 4, icon: "/icons/mode.svg", alt: "mode Icon" },
 ];
-export { navLinks, navIcons };
+
+const dockApps = [
+  { id: "finder", name: "portfolio", icon: "/finder.png", canOpen: true },
+  { id: "safari", name: "Articles", icon: "/safari.png", canOpen: true },
+  { id: "photos", name: "Gallery", icon: "/photos.png", canOpen: true },
+  { id: "contact", name: "Contact", icon: "/contact.png", canOpen: true },
+  { id: "terminal", name: "Terminal", icon: "/terminal.png", canOpen: true },
+  { id: "trash", name: "Archive", icon: "/trash.png", canOpen: false },
+];
+export { navLinks, navIcons, dockApps };
