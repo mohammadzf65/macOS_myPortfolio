@@ -1,4 +1,4 @@
-import WindowWarpper from "#hoc/WindowWarpper";
+import WindowWarpper from "#hoc/WindowWrapper.jsx";
 import {WindowControls} from "#components/index.js";
 
 const Terminal = () => {

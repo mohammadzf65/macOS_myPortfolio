@@ -5,10 +5,10 @@ import gsap from "gsap";
 import {Draggable} from "gsap/Draggable";
 
 
-const WindowWarpper = (Component, windowKey) => {
+const WindowWrapper = (Component, windowKey) => {
     const Wrapped = (props) => {
         const {focusWindow, windows} = useWindowStore();
-        const {isOpen, zIndex} = windows[windowKey];
+        const {isOpen, zIndex} = windows[windowKey] || {isOpen: false, zIndex: 1000};
         const ref = useRef(null);
 
 
@@ -19,13 +19,12 @@ const WindowWarpper = (Component, windowKey) => {
             gsap.fromTo(
                 el,
                 {
-                    Scale: 0.8,
+                    scale: 0.8,
                     opacity: 0,
                     y: 40,
                 },
-                {Scale: 1, opacity: 1, duration: 0.4, y: 20, ease: "power3.out"}
+                {scale: 1, opacity: 1, duration: 0.4, y: 20, ease: "power3.out"}
             );
-            el.style.display = "block";
 
         }, [isOpen]);
         useGSAP(() => {
@@ -55,4 +54,4 @@ const WindowWarpper = (Component, windowKey) => {
     return Wrapped;
 };
 
-export default WindowWarpper;
+export default WindowWrapper;
